@@ -1,0 +1,12 @@
+web:
+  image: mautic/mautic
+  links:
+    - db:mysql
+  env_file:
+    - ./env
+  environment:
+    - HOST
+db:
+  image: mysql:5.6
+  env_file:
+    - ./env
