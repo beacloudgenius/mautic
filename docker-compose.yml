@@ -6,7 +6,11 @@ web:
     - ./env
   environment:
     - HOST
+  ports:
+    - "80:80"
+  volumes:
+      - "./conf/cg-php.ini:/usr/local/etc/php/conf.d/cg-php.ini"
 db:
-  image: mysql:5.6
+  image: mariadb
   env_file:
     - ./env
